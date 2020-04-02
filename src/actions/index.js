@@ -4,7 +4,7 @@ export const addTodo = text => ({
   id: nextTodoId++,
   text
 })
-git 
+
 export const delTodo = userId => ({
   type: 'DEL_TODO',
   userId: userId

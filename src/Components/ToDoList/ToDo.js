@@ -2,15 +2,14 @@ import React from 'react';
 
 const ToDo=(props)=>{
      console.log("TODO",props);
-     let onDeleteUser = (userId) => {
-          alert(userId);
-           props.delTodo(userId);
-        };
 
 return(
-<li key={props.id}>
+<li key={props.id} onClick={()=>props.toggleTodo(props.id)}
+    style={{
+     textDecoration: props.completed ? 'line-through' : 'none'
+   }} >
 {props.text}
-<button onClick={()=>onDeleteUser(props.id)}>del{props.id}</button>
+<button onClick={()=>props.delTodo(props.id)}>del{props.id}</button>
      </li>
 )
 }
